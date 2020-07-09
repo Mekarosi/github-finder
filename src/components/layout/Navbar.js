@@ -18,7 +18,7 @@ class Navbar extends Component {
     return (
       <nav className='navbar bg-primary'>
         <h1>
-          <FontAwesomeIcon icon={faGithub} />
+          <FontAwesomeIcon style={{ margin: '2px' }} icon={faGithub} />
           {this.props.title}
         </h1>
       </nav>
