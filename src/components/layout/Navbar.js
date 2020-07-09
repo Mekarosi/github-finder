@@ -1,29 +1,27 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 library.add(faGithub);
 
-class Navbar extends Component {
-  static defaultProps = {
-    title: 'Github Finder',
-  };
+const Navbar = ({ title }) => {
+  return (
+    <nav className='navbar bg-primary'>
+      <h1>
+        <FontAwesomeIcon style={{ margin: '2px' }} icon={faGithub} />
+        {title}
+      </h1>
+    </nav>
+  );
+};
 
-  static propTypes = {
-    title: PropTypes.string.isRequired,
-  };
+Navbar.defaultProps = {
+  title: 'Github Finder',
+};
 
-  render() {
-    return (
-      <nav className='navbar bg-primary'>
-        <h1>
-          <FontAwesomeIcon style={{ margin: '2px' }} icon={faGithub} />
-          {this.props.title}
-        </h1>
-      </nav>
-    );
-  }
-}
+Navbar.propTypes = {
+  title: PropTypes.string.isRequired,
+};
 
 export default Navbar;
